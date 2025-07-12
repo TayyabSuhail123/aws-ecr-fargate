@@ -11,6 +11,8 @@ on:
         options:
           - plan
           - apply
+env:
+  AWS_REGION: eu-central-1          
 
 jobs:
   terraform:
