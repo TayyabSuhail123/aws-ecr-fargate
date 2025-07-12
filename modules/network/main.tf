@@ -1,3 +1,4 @@
+
 resource "aws_vpc" "vpc" {
   cidr_block           = var.vpc_cidr
   enable_dns_support   = true
@@ -17,13 +18,14 @@ resource "aws_internet_gateway" "igw" {
 }
 
 resource "aws_subnet" "public_subnet" {
+  count                   = 2
   vpc_id                  = aws_vpc.vpc.id
-  cidr_block              = var.public_subnet_cidrs[0]
+  cidr_block              = var.public_subnet_cidr[count.index]
   map_public_ip_on_launch = true
-  availability_zone       = var.availability_zones[0]
+  availability_zone       = var.availability_zones[count.index]
 
   tags = {
-    Name = "${var.name}-public-subnet"
+    Name = "${var.name}-public-subnet-${count.index}"
   }
 }
 
@@ -41,6 +43,7 @@ resource "aws_route_table" "public_rt" {
 }
 
 resource "aws_route_table_association" "public_assoc" {
-  subnet_id      = aws_subnet.public_subnet.id
+  count          = 2
+  subnet_id      = aws_subnet.public_subnet[count.index].id
   route_table_id = aws_route_table.public_rt.id
 }
