@@ -39,16 +39,16 @@ resource "aws_lb" "app_alb" {
   subnets            = var.public_subnet_ids
 
   enable_deletion_protection = false
-  tags = { Name = "${var.name}-alb" }
+  tags                       = { Name = "${var.name}-alb" }
 }
 
 
 resource "aws_lb_target_group" "tg" {
   name        = "${var.name}-tg"
-  port        = var.target_group_port   
+  port        = var.target_group_port
   protocol    = "HTTP"
   vpc_id      = var.vpc_id
-  target_type = "ip"                    
+  target_type = "ip"
 
   health_check {
     path                = "/docs"

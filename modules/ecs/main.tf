@@ -70,13 +70,13 @@ resource "aws_ecs_service" "app_service" {
   }
 
   load_balancer {
-  target_group_arn = var.alb_target_group_arn
-  container_name   = "app"    # must match ECS task def container
-  container_port   = 8000
-}
+    target_group_arn = var.alb_target_group_arn
+    container_name   = "app" # must match ECS task def container
+    container_port   = 8000
+  }
 
   depends_on = [aws_iam_role.task_execution_role,
-  var.alb_target_group_arn ]
+  var.alb_target_group_arn]
 }
 
 resource "aws_security_group" "fargate_sg" {
