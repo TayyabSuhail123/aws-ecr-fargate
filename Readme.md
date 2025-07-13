@@ -49,12 +49,14 @@ We structured the repo using reusable modules – a common pattern for real-worl
 ### Fargate vs. EC2 + Public IP
 - **No servers to manage**, patch, or scale manually
 - Pay-per-second, perfect for ephemeral demo workloads
-- ALB handles health checks and auto-attach via task IPs
+- This setup mirrors how production systems are actually deployed using containers
+- Wanted to show my capabillites regarding real world solutions instead of demo projects.
 
-### ALB vs. Direct IP
+### Why ALB 
 - Fargate IPs change on every restart
+- Cannot view IP without running CLI commands or using the AWS console.
 - ALB gives **stable DNS**, better UX for demos
-- Health checks ensure only healthy tasks are exposed
+- App deployed to multiple zones which is better for real production usecases.
 
 ---
 
@@ -97,7 +99,7 @@ http://agent-runner-alb-30911118.eu-central-1.elb.amazonaws.com/docs
 The Url might give 503 if you try to access it immediately so just be patient and wait a few minutes for the magic to happen and it will work.
 
 
-All logs for the api can be found in Cloudwatch on AWS console in the loggroup
+All logs for the api can be found in Cloudwatch on AWS console in the loggroup (Access to console will be provided with the submission)
 
 ```
 /ecs/agent-runner
