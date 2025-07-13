@@ -156,8 +156,7 @@ This ensures **full isolation**, prevents accidental cross-deployments, and alig
 
 ## 🤖 AI‑Assistance Note
 
-Used **GPT‑4** to scaffold module structure and CI templates. Every block was manually reviewed and edited for naming, security, and logic.
-
+Used **GPT‑4** for module structures and CI templates. Every module was manually edited and wired through our main.tf (root) and CI/CD was edited for each stage manually . The Readme is mostly generated using AI but each heading is edited and reviewed accordingly 
 ---
 
 Happy shipping! ✨
