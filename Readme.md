@@ -75,7 +75,7 @@ In production, this would be tightly scoped to least privilege, using precise AR
 
 | Action | How | Notes |
 |--------|-----|-------|
-| **Plan / Apply** | **Actions → _Terraform Infrastructure Manual CI_ → _Run workflow_ → choose `plan` or `apply`** | See or apply changes. |
+| **Plan / Apply** | **Actions → _🚀 Terraform CI/CD_ → _Run workflow_ → choose `plan` or `apply`** | See or apply changes. |
 | **Destroy** | **Actions → _Terraform Destroy_ → Run workflow** | 💸 Please destroy after demo – ALB & Fargate can cost. |
 
 ### Output after Apply:
