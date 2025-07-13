@@ -89,12 +89,15 @@ public_subnet_ids = [
 vpc_id = "vpc-088034a90bcb51a1a"
 ```
 
-wait a few minutes for the url to be reachable then in any browser use the alb_url/docs like the example below to access the swagger page for our python api which can be used to test the api
+Use the alb_url/docs like the example below to access the swagger page for our python api which can be used to test the api
 
 ```
 http://agent-runner-alb-30911118.eu-central-1.elb.amazonaws.com/docs
 ```
-All logs for the api can be found in Cloudwatch on AWS console in the loggroup 
+The Url might give 503 if you try to access it immediately so just be patient and wait a few minutes for the magic to happen and it will work.
+
+
+All logs for the api can be found in Cloudwatch on AWS console in the loggroup
 
 ```
 /ecs/agent-runner
