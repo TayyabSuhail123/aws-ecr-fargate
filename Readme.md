@@ -142,10 +142,15 @@ We'll split infrastructure by environments:
 - Each environment will have:
   - Its **own `backend.tf`** (separate state file)
   - Its **own Vault configuration**
-  - Its **own IAM role**
-  - Independent GitHub pipeline workflows
+  - Its **own IAM role** allowed only to access resources of that env.
 
 This ensures **full isolation**, prevents accidental cross-deployments, and aligns with Terraform and Vault best practices for production-grade environments.
+
+### Branch Strategy & CI/CD Flow:
+- Lock the main branch.
+- Any push to a feature branch will only trigger terraform plan.
+- Only a collaborator-approved merge to main will expose the manual terraform apply trigger.
+- This ensures no accidental infrastructure deployment without peer review and control.
 
 ---
 
