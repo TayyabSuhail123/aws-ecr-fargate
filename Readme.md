@@ -162,3 +162,6 @@ Used **GPT‑4** for module structures and CI templates. Every module was manual
 ---
 
 Happy shipping! ✨
+
+ECS and ALB inspiration and help from
+https://github.com/aws-ia/terraform-aws-ecs-fargate
