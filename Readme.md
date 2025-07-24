@@ -1,5 +1,5 @@
 
-# ☁️ Inca Agent‑Runner – Infra (Terraform)
+# ☁️ Infra (Terraform)
 
 Welcome! This repo provisions **everything needed for the Python Agent‑Runner app** using AWS + Terraform. You can deploy fully via GitHub Actions, no local tools required. Once you're done, destroy it the same way to avoid cost.
 
